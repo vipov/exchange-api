@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {forwardRef} from 'react'
 import './Coin.css';
 
-const Coin = ({image, name, symbol, price, volume, priceChange, marketcap}) => {
+
+      
+const Coin = forwardRef(({image, name, symbol, price, volume, priceChange, marketcap}, ref) => {
     let defaultVolume = volume || 500;
     return (
-        <div className="coin-container">
+        <div className="coin-container" ref={ref}>
             <div className="coin-row">
                 <div className="coin">
                     <img src={image} alt="crypto"/>
@@ -28,5 +30,5 @@ const Coin = ({image, name, symbol, price, volume, priceChange, marketcap}) => {
         </div>
     )
 }
-
+)
 export default Coin

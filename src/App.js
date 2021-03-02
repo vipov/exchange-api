@@ -3,7 +3,12 @@ import axios from 'axios'
 import Coin from './Coin'
 import './App.css';
 import Buttons from './Buttons'
+import FlipMove from "react-flip-move";
 
+// const customLeaveAnimation = {
+//   from: { transform: 'scale(2, 1)' },
+//   to:   { transform: 'scale(0.5, 1) translateY(-90px)' }
+// };
 
 function App() {
 
@@ -132,6 +137,9 @@ function App() {
       sortByVolume={sortByVolume}
       sortByPercent={sortByPercent}
       sortByMarketCap={sortByMarketCap}/>
+      <FlipMove
+      // leaveAnimation={customLeaveAnimation}
+      >
         {filteredCoins.map(coin => {
           // console.log(coin.total_volume)
           return (
@@ -148,6 +156,9 @@ function App() {
             />
           )
           })}
+</FlipMove>
+
+
     </div>
   );
 }
